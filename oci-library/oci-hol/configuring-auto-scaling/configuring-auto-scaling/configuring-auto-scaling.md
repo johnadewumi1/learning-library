@@ -171,6 +171,17 @@ Enter the following ingress rule:
     ```
     <copy>
     #cloud-config
+
+    yum_repos:
+        epel-testing:
+            baseurl: https://yum.oracle.com/repo/OracleLinux/OL7/developer_EPEL/$basearch/
+            enabled: true
+            failovermethod: priority
+            gpgcheck: true
+            gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+            name: EPEL ($basearch)
+
+
     packages:
     - httpd
     - stress
